@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  title: ArithmeticOperationsAPI
+  description: API for performing basic arithmetic operations.
+  version: 1.0.0
+
+# You'll need to replace {PROJ_ID} with your actual Google Cloud project ID.
+host: arithmetic-api.apigateway.apache-vm-415704.cloud.goog
+basePath: /
+schemes:
+  - https
+
+paths:
+  /add:
+    get:
+      operationId: addNumbers
+      summary: Adds two numbers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-apache-vm-415704.cloudfunctions.net/add
+  /sub:
+    get:
+      operationId: subtractNumbers
+      summary: Subtracts two numbers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-apache-vm-415704.cloudfunctions.net/sub
+  /div:
+    get:
+      operationId: divideNumbers
+      summary: Divides two numbers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-apache-vm-415704.cloudfunctions.net/div
+  /mul:
+    get:
+      operationId: multiplyNumbers
+      summary: Multiplies two numbers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-apache-vm-415704.cloudfunctions.net/mul
